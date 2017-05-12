@@ -56,3 +56,19 @@ echo "Version is $VERSION"
 # result should be 6.7 at the moment
 
 # And heck out the blog post http://www.sonatype.com/people/2012/07/learning-the-nexus-rest-api-read-the-docs-or-fire-up-a-browser/ about how to use the browser debug tools to monitor rest api calls of the nexus user interface itself
+
+curl -v \
+    -F "r=releases" \
+    -F "g=com.acme.widgets" \
+    -F "a=widget" \
+    -F "v=0.1-1" \
+    -F "p=tar.gz" \
+    -F "file=@./widget-0.1-1.tar.gz" \
+    -u myuser:mypassword \
+    http://localhost:8081/nexus/service/local/artifact/maven/content
+
+
+
+
+
+
